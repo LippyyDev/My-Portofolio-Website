@@ -14,7 +14,7 @@ Website portfolio pribadi dengan tema dark mode yang elegan dan modern. Dibuat m
 
 ## ✨ Fitur Utama
 
-- 🎨 **Dark Mode Theme** - Desain elegan dengan kontras hitam-putih
+- 🎨 **Dark Mode Theme** - Desain elegan dengan kontras hitam putih
 - 📱 **Fully Responsive** - Optimal di semua perangkat
 - 🎬 **Smooth Animations** - Menggunakan GSAP untuk animasi halus
 - 🎯 **Single Page Application** - Navigasi smooth antar section
