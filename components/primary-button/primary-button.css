@@ -1,0 +1,258 @@
+/* Primary Button Component Styles */
+/* Glow gradient effects for all button types */
+
+/* Base Button Styles */
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Primary Button Styles */
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.2),
+    rgba(78, 205, 196, 0.2),
+    rgba(69, 183, 209, 0.2)
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.3),
+    rgba(78, 205, 196, 0.3),
+    rgba(69, 183, 209, 0.3)
+  );
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.15),
+    0 0 8px rgba(78, 205, 196, 0.1), 0 0 15px rgba(69, 183, 209, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Secondary Button Styles */
+.btn-secondary {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(78, 205, 196, 0.1),
+    rgba(69, 183, 209, 0.1)
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.25),
+    rgba(78, 205, 196, 0.25),
+    rgba(69, 183, 209, 0.25)
+  );
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.15),
+    0 0 8px rgba(78, 205, 196, 0.1), 0 0 15px rgba(69, 183, 209, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Project Link Styles */
+.project-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15),
+    rgba(78, 205, 196, 0.15),
+    rgba(69, 183, 209, 0.15)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+  left: 100%;
+}
+
+.project-link:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.25),
+    rgba(78, 205, 196, 0.25),
+    rgba(69, 183, 209, 0.25)
+  );
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.15),
+    0 0 6px rgba(78, 205, 196, 0.1), 0 0 12px rgba(69, 183, 209, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Contact Link Styles */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(78, 205, 196, 0.1),
+    rgba(69, 183, 209, 0.1)
+  );
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.contact-link:hover::before {
+  left: 100%;
+}
+
+.contact-link:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15),
+    rgba(78, 205, 196, 0.15),
+    rgba(69, 183, 209, 0.15)
+  );
+  transform: translateX(10px);
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.1),
+    0 0 5px rgba(78, 205, 196, 0.05), 0 0 10px rgba(69, 183, 209, 0.03);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.contact-link i {
+  font-size: 1.5rem;
+  width: 30px;
+}
+
+/* Responsive Design for Buttons */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  .project-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .contact-link {
+    padding: 0.6rem;
+  }
+}

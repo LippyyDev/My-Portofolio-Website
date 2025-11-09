@@ -1,0 +1,696 @@
+/* Hero Card Component Styles */
+
+/* Profile Image Card */
+.home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ultra Smooth Fall Animation */
+@keyframes realisticFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh) rotateX(-15deg) rotateZ(5deg) scale(0.8);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) rotateZ(0deg) scale(1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    filter: blur(0px);
+  }
+}
+
+/* Minimal bounce */
+@keyframes realisticBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.005);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Ultra minimal settle */
+@keyframes finalSettle {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateY(-0.5px) scale(1.0005);
+    box-shadow: 0 21px 61px rgba(0, 0, 0, 0.31);
+  }
+}
+
+/* Floating Animation - Gentle floating motion */
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  25% {
+    transform: translateY(-8px) rotateX(1deg) rotateY(-1deg) rotateZ(0.5deg);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(0deg) rotateY(1deg) rotateZ(-0.5deg);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+  75% {
+    transform: translateY(-6px) rotateX(-1deg) rotateY(0deg) rotateZ(0.3deg);
+    box-shadow: 0 22px 65px rgba(0, 0, 0, 0.32);
+  }
+}
+
+/* Subtle Tilt Animation - Very gentle 3D tilting */
+@keyframes subtleTilt {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  20% {
+    transform: rotateX(2deg) rotateY(-1deg) rotateZ(0.5deg);
+    box-shadow: 0 22px 64px rgba(0, 0, 0, 0.32);
+  }
+  40% {
+    transform: rotateX(-1deg) rotateY(2deg) rotateZ(-0.3deg);
+    box-shadow: 0 24px 68px rgba(0, 0, 0, 0.34);
+  }
+  60% {
+    transform: rotateX(1deg) rotateY(-2deg) rotateZ(0.7deg);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, 0.36);
+  }
+  80% {
+    transform: rotateX(-2deg) rotateY(1deg) rotateZ(-0.4deg);
+    box-shadow: 0 23px 66px rgba(0, 0, 0, 0.33);
+  }
+}
+
+/* Combined Floating and Tilt Animation */
+@keyframes floatingTilt {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  15% {
+    transform: translateY(-6px) rotateX(1.5deg) rotateY(-1deg) rotateZ(0.3deg);
+    box-shadow: 0 24px 68px rgba(0, 0, 0, 0.34);
+  }
+  30% {
+    transform: translateY(-10px) rotateX(-0.5deg) rotateY(1.5deg)
+      rotateZ(-0.2deg);
+    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.38);
+  }
+  45% {
+    transform: translateY(-8px) rotateX(0.8deg) rotateY(-1.2deg) rotateZ(0.4deg);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, 0.36);
+  }
+  60% {
+    transform: translateY(-12px) rotateX(-1deg) rotateY(0.8deg) rotateZ(-0.3deg);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+  75% {
+    transform: translateY(-7px) rotateX(1.2deg) rotateY(-0.5deg) rotateZ(0.2deg);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  }
+  90% {
+    transform: translateY(-9px) rotateX(-0.8deg) rotateY(1deg) rotateZ(-0.1deg);
+    box-shadow: 0 27px 73px rgba(0, 0, 0, 0.37);
+  }
+}
+
+/* Additional subtle floating variations */
+@keyframes gentleSway {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  25% {
+    transform: translateY(-5px) rotateX(0.8deg) rotateY(-0.5deg) rotateZ(0.2deg);
+    box-shadow: 0 23px 66px rgba(0, 0, 0, 0.33);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(-0.3deg) rotateY(0.8deg)
+      rotateZ(-0.1deg);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, 0.36);
+  }
+  75% {
+    transform: translateY(-4px) rotateX(0.5deg) rotateY(-0.3deg)
+      rotateZ(0.15deg);
+    box-shadow: 0 22px 64px rgba(0, 0, 0, 0.32);
+  }
+}
+
+@keyframes softDrift {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  20% {
+    transform: translateY(-7px) rotateX(1deg) rotateY(-0.8deg) rotateZ(0.3deg);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  }
+  40% {
+    transform: translateY(-9px) rotateX(-0.5deg) rotateY(1deg) rotateZ(-0.2deg);
+    box-shadow: 0 28px 76px rgba(0, 0, 0, 0.38);
+  }
+  60% {
+    transform: translateY(-6px) rotateX(0.7deg) rotateY(-0.6deg)
+      rotateZ(0.25deg);
+    box-shadow: 0 24px 68px rgba(0, 0, 0, 0.34);
+  }
+  80% {
+    transform: translateY(-8px) rotateX(-0.8deg) rotateY(0.7deg)
+      rotateZ(-0.15deg);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, 0.36);
+  }
+}
+
+/* Initial state for realistic fall animation */
+.image-card.fall-animation {
+  opacity: 0;
+  transform: translateY(-100vh) rotateX(-15deg) rotateZ(5deg) scale(0.8);
+  animation: realisticFall 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity;
+}
+
+/* Minimal bounce animation after falling */
+.image-card.settle-animation {
+  animation: realisticBounce 0.4s ease-out 1.2s forwards;
+  will-change: transform;
+}
+
+/* Ultra minimal final settle */
+.image-card.final-settle {
+  animation: finalSettle 0.3s ease-out 1.6s forwards;
+  will-change: transform;
+}
+
+/* Idle floating animation - Applied after all initial animations complete */
+.image-card.idle-floating {
+  animation: floatingTilt 8s ease-in-out infinite;
+  animation-delay: 2s; /* Start after initial animations complete */
+  will-change: transform;
+}
+
+/* Alternative floating animations for variety */
+.image-card.gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+  animation-delay: 2s;
+  will-change: transform;
+}
+
+.image-card.subtle-tilt {
+  animation: subtleTilt 10s ease-in-out infinite;
+  animation-delay: 2s;
+  will-change: transform;
+}
+
+.image-card.gentle-sway {
+  animation: gentleSway 7s ease-in-out infinite;
+  animation-delay: 2s;
+  will-change: transform;
+}
+
+.image-card.soft-drift {
+  animation: softDrift 9s ease-in-out infinite;
+  animation-delay: 2s;
+  will-change: transform;
+}
+
+.image-card {
+  position: relative;
+  width: 380px;
+  height: 580px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  /* Hardware acceleration for smooth animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.2) 0%,
+    rgba(138, 43, 226, 0.2) 25%,
+    rgba(255, 20, 147, 0.2) 50%,
+    rgba(0, 191, 255, 0.2) 75%,
+    rgba(50, 205, 50, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Shimmering Mica Effect on Hover */
+.image-card:hover {
+  animation: mica-glow 2s ease-in-out infinite;
+  filter: saturate(1.3) brightness(1.2);
+  backdrop-filter: blur(10px) saturate(1.5);
+  -webkit-backdrop-filter: blur(10px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 255, 255, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.image-card:hover::before {
+  animation: gradientFlow 3s ease-in-out infinite,
+    shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.2),
+    rgba(138, 43, 226, 0.2),
+    rgba(255, 20, 147, 0.2),
+    rgba(0, 191, 255, 0.2),
+    rgba(50, 205, 50, 0.2),
+    rgba(255, 165, 0, 0.2),
+    rgba(255, 0, 255, 0.2)
+  );
+  background-size: 400% 400%;
+}
+
+.image-card:hover::after {
+  animation: gradientFlow 4s ease-in-out infinite reverse,
+    iridescent-shift 3s ease-in-out infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 20, 147, 0.15),
+    rgba(0, 255, 255, 0.15),
+    rgba(138, 43, 226, 0.15),
+    rgba(0, 191, 255, 0.15),
+    rgba(50, 205, 50, 0.15)
+  );
+  background-size: 400% 400%;
+}
+
+/* Shimmer Overlay for Mica Effect */
+.image-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.1),
+    rgba(138, 43, 226, 0.1),
+    rgba(255, 20, 147, 0.1),
+    rgba(0, 191, 255, 0.1),
+    rgba(50, 205, 50, 0.1),
+    rgba(255, 165, 0, 0.1),
+    rgba(255, 0, 255, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.image-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 20, 147, 0.08),
+    rgba(0, 255, 255, 0.08),
+    rgba(138, 43, 226, 0.08),
+    rgba(0, 191, 255, 0.08),
+    rgba(50, 205, 50, 0.08)
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+/* Additional shimmer overlay for mica effect */
+.image-card:hover::before,
+.image-card.mica-active::before {
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    ),
+    linear-gradient(
+      45deg,
+      rgba(0, 255, 255, 0.3),
+      rgba(138, 43, 226, 0.3),
+      rgba(255, 20, 147, 0.3),
+      rgba(0, 191, 255, 0.3),
+      rgba(50, 205, 50, 0.3),
+      rgba(255, 165, 0, 0.3),
+      rgba(255, 0, 255, 0.3)
+    );
+  background-size: 200% 100%, 400% 400%;
+  animation: gradientFlow 2.5s ease-in-out infinite,
+    shimmer 1.2s ease-in-out infinite;
+}
+
+/* Enhanced mica effect for JavaScript-controlled activation */
+.image-card.mica-active {
+  animation: mica-glow 1.5s ease-in-out infinite,
+    iridescent-shift 2s ease-in-out infinite;
+  filter: saturate(1.4) brightness(1.3) contrast(1.1);
+  backdrop-filter: blur(15px) saturate(1.8);
+  -webkit-backdrop-filter: blur(15px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5), 0 0 50px rgba(255, 255, 255, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmering Mica Effect Keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    background-position: 0% 0;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    background-position: 200% 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes mica-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes mica-glow {
+  0%,
+  100% {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 rgba(255, 255, 255, 0),
+      inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes iridescent-shift {
+  0% {
+    filter: hue-rotate(0deg) saturate(1.2) brightness(1.1);
+  }
+  25% {
+    filter: hue-rotate(90deg) saturate(1.5) brightness(1.3);
+  }
+  50% {
+    filter: hue-rotate(180deg) saturate(1.8) brightness(1.4);
+  }
+  75% {
+    filter: hue-rotate(270deg) saturate(1.5) brightness(1.3);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1.2) brightness(1.1);
+  }
+}
+
+.profile-image {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  object-position: bottom center;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.1s ease-out;
+  filter: grayscale(100%) contrast(1.1) brightness(1.2);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: #ffffff;
+  transition: transform 0.1s ease-out;
+}
+
+.card-header {
+  text-align: center;
+  transition: transform 0.1s ease-out;
+}
+
+.card-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 2px 2px 0px rgba(0, 0, 0, 0.8),
+    -2px -2px 0px rgba(0, 0, 0, 0.8), 2px -2px 0px rgba(0, 0, 0, 0.8),
+    -2px 2px 0px rgba(0, 0, 0, 0.8), 0 2px 0px rgba(0, 0, 0, 0.8),
+    0 -2px 0px rgba(0, 0, 0, 0.8), 2px 0px 0px rgba(0, 0, 0, 0.8),
+    -2px 0px 0px rgba(0, 0, 0, 0.8);
+  filter: contrast(1.3) brightness(1.1);
+}
+
+.card-title {
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8), 1px 1px 0px rgba(0, 0, 0, 0.8),
+    -1px -1px 0px rgba(0, 0, 0, 0.8), 1px -1px 0px rgba(0, 0, 0, 0.8),
+    -1px 1px 0px rgba(0, 0, 0, 0.8), 0 1px 0px rgba(0, 0, 0, 0.8),
+    0 -1px 0px rgba(0, 0, 0, 0.8), 1px 0px 0px rgba(0, 0, 0, 0.8),
+    -1px 0px 0px rgba(0, 0, 0, 0.8);
+  filter: contrast(1.2) brightness(1.05);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.1s ease-out;
+  min-width: 240px;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.status-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1) brightness(1.1);
+}
+
+.status-username {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.status-online {
+  font-size: 0.8rem;
+  color: #cccccc;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Contact Me Button - Keep text on single line */
+.footer-content .btn-primary {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon {
+  font-size: 0.9rem;
+}
+
+.contact-text {
+  display: inline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-card {
+    width: 280px;
+    height: 440px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  /* Perkecil ukuran font untuk mobile */
+  .card-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-title {
+    font-size: 0.75rem;
+  }
+
+  .status-username {
+    font-size: 0.8rem;
+  }
+
+  .status-online {
+    font-size: 0.7rem;
+  }
+
+  .footer-content .btn-primary {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+
+  .contact-text {
+    display: none;
+  }
+
+  .contact-icon {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    min-width: 200px;
+    padding: 10px 20px;
+    gap: 12px;
+  }
+
+  .status-img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .card-overlay {
+    padding: 1.2rem;
+  }
+}
+
+/* Responsive untuk layar yang lebih kecil */
+@media (max-width: 480px) {
+  .image-card {
+    width: 260px;
+    height: 400px;
+  }
+
+  .card-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-title {
+    font-size: 0.7rem;
+  }
+
+  .status-username {
+    font-size: 0.75rem;
+  }
+
+  .status-online {
+    font-size: 0.65rem;
+  }
+
+  .footer-content .btn-primary {
+    font-size: 0.7rem;
+    padding: 7px 14px;
+  }
+
+  .contact-text {
+    display: none;
+  }
+
+  .contact-icon {
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    min-width: 180px;
+    padding: 8px 16px;
+    gap: 10px;
+  }
+
+  .status-img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-overlay {
+    padding: 1rem;
+  }
+}

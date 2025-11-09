@@ -1,0 +1,80 @@
+/* About Card Component Styles */
+
+/* About Profile Image Card */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-card {
+  position: relative;
+  width: 280px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.2) 0%,
+    rgba(138, 43, 226, 0.2) 25%,
+    rgba(255, 20, 147, 0.2) 50%,
+    rgba(0, 191, 255, 0.2) 75%,
+    rgba(50, 205, 50, 0.2) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Simple hover effect without brightness */
+.about-image-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.about-image-card:hover::before {
+  display: none;
+}
+
+.about-image-card:hover::after {
+  display: none;
+}
+
+/* Simple background without shimmer effects */
+.about-image-card::before {
+  display: none;
+}
+
+.about-image-card::after {
+  display: none;
+}
+
+/* Enhanced mica effect for JavaScript-controlled activation */
+.about-image-card.mica-active {
+  transform: scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.about-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.1s ease-out;
+  filter: contrast(1.1) brightness(1.1);
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-image-card {
+    width: 240px;
+    height: 360px;
+  }
+}

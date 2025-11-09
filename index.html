@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortofolioWeb - Portfolio Pribadi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/navbar/navbar.css" />
+    <link rel="stylesheet" href="components/hero-card/hero-card.css" />
+    <link rel="stylesheet" href="components/about-card/about-card.css" />
+    <link
+      rel="stylesheet"
+      href="components/primary-button/primary-button.css"
+    />
+    <link
+      rel="stylesheet"
+      href="components/certificate-modal/certificate-modal.css"
+    />
+    <link rel="stylesheet" href="components/project-card/project-card.css" />
+    <link rel="stylesheet" href="components/chat-room/chat-room.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Floating Bottom Navigation -->
+    <nav class="floating-nav">
+      <a href="#home" class="nav-icon" title="Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <a href="#about" class="nav-icon" title="Profile">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="#projects" class="nav-icon" title="Projects">
+        <i class="fas fa-code"></i>
+      </a>
+      <a
+        href="https://github.com/LippyyDev"
+        target="_blank"
+        class="nav-icon"
+        title="GitHub"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/muhalifqadri"
+        target="_blank"
+        class="nav-icon"
+        title="LinkedIn"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <!-- Divider -->
+      <div class="nav-divider"></div>
+
+      <!-- Music Controls -->
+      <button class="nav-icon music-control" id="prev-btn" title="Previous">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button
+        class="nav-icon music-control"
+        id="play-pause-btn"
+        title="Play/Pause"
+      >
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="nav-icon music-control" id="next-btn" title="Next">
+        <i class="fas fa-forward"></i>
+      </button>
+    </nav>
+
+    <!-- Music Pop-up Notification -->
+    <div class="music-popup" id="music-popup">
+      <i class="fas fa-music music-popup-icon"></i>
+      <span class="music-popup-text" id="music-popup-text">Loading...</span>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio-player" preload="auto"></audio>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+      <div class="home-container">
+        <div class="home-content">
+          <div class="home-text">
+            <div class="quote-bubble">
+              <img
+                src="components/saya/saya.webp"
+                alt="Profile"
+                class="quote-img"
+              />
+              <span>"Ijazah saja bisa palsu, apalagi hanya perasaan dia"</span>
+            </div>
+            <h1 class="home-title">Hi I'm Muhammad Alif Qadri</h1>
+            <p class="home-description">
+              A passionate application and web developer dedicated to crafting
+              modern, high-performance digital experiences through innovative
+              and user-friendly solutions.
+            </p>
+            <div class="home-buttons">
+              <a
+                href="https://drive.google.com/file/d/1wAr6aF3dIw9q4yuQ9n3eU9Iaz0m-4dWX/view?usp=sharing"
+                target="_blank"
+                class="btn btn-secondary"
+                >Download CV</a
+              >
+              <a href="#projects" class="btn btn-secondary"
+                >Explore My Projects</a
+              >
+            </div>
+          </div>
+          <div id="hero-card-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Text Section -->
+    <section class="marquee-section">
+      <div class="marquee-container">
+        <div class="marquee-text marquee-text-1">
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+          <span>UI UX DESIGNER - WEB DEVELOPER</span>
+        </div>
+        <div class="marquee-text marquee-text-2">
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+          <span>WEB DEVELOPER - UI UX DESIGNER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <!-- Single About Box -->
+          <div class="about-main-box">
+            <!-- Left Section -->
+            <div class="about-left-section">
+              <h2 class="about-title">About Me</h2>
+              <p class="about-description">
+                I am a passionate Software Engineering student with a strong
+                interest in Web Development, UI/UX Design, and Artificial
+                Intelligence. I enjoy designing and developing digital solutions
+                that combine functionality, creativity, and user-centered
+                design. With a solid foundation in software engineering, I am
+                eager to keep learning, explore emerging technologies, and
+                contribute to innovative projects that make a real impact.
+              </p>
+
+              <!-- Statistics Section -->
+              <div class="about-stats">
+                <div class="stat-item">
+                  <div class="stat-number">20+</div>
+                  <div class="stat-label">Project Finished</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">3+</div>
+                  <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">
+                    <span class="stat-gpa">3.95</span>
+                    <span class="stat-gpa-denominator">/4.00</span>
+                  </div>
+                  <div class="stat-label">GPA</div>
+                </div>
+              </div>
+
+              <!-- Motto -->
+              <div class="about-motto">
+                "I always rely on my logic in any situation."
+              </div>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="about-divider"></div>
+
+            <!-- Right Section with About Card -->
+            <div class="about-right-section">
+              <div id="about-card-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools and Technologies Section -->
+    <section id="tools" class="tools">
+      <div class="container">
+        <div class="tools-header">
+          <h2 class="tools-title">Tools and Technologies</h2>
+          <p class="tools-description">
+            Here are some tools, programming languages, and frameworks that I
+            understand
+          </p>
+        </div>
+        <div class="tools-container">
+          <div class="tools-scroll">
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vscode.png"
+                alt="Visual Studio Code"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Visual Studio Code</h3>
+                <p>Code Editor</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/reactjs.png"
+                alt="React JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>React JS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/tailwind.png"
+                alt="Tailwind CSS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Tailwind CSS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/bootstrap.png"
+                alt="Bootstrap"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Bootstrap</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/js.png"
+                alt="Javascript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Javascript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/nodejs.png"
+                alt="Node JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Node JS</h3>
+                <p>Javascript Runtime</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/github.png"
+                alt="Github"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Github</h3>
+                <p>Repository</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/canva.png"
+                alt="Canva"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Canva</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+            <!-- Duplikasi untuk infinite scroll -->
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vscode.png"
+                alt="Visual Studio Code"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Visual Studio Code</h3>
+                <p>Code Editor</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/reactjs.png"
+                alt="React JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>React JS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/tailwind.png"
+                alt="Tailwind CSS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Tailwind CSS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/bootstrap.png"
+                alt="Bootstrap"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Bootstrap</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/js.png"
+                alt="Javascript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Javascript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/nodejs.png"
+                alt="Node JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Node JS</h3>
+                <p>Javascript Runtime</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/github.png"
+                alt="Github"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Github</h3>
+                <p>Repository</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/canva.png"
+                alt="Canva"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Canva</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+            <!-- Third duplication for seamless loop -->
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vscode.png"
+                alt="Visual Studio Code"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Visual Studio Code</h3>
+                <p>Code Editor</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/reactjs.png"
+                alt="React JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>React JS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/tailwind.png"
+                alt="Tailwind CSS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Tailwind CSS</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/bootstrap.png"
+                alt="Bootstrap"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Bootstrap</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/js.png"
+                alt="Javascript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Javascript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/nodejs.png"
+                alt="Node JS"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Node JS</h3>
+                <p>Javascript Runtime</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/github.png"
+                alt="Github"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Github</h3>
+                <p>Repository</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/canva.png"
+                alt="Canva"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Canva</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tools-scroll-2">
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/figma.png"
+                alt="Figma"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Figma</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/kotlin.png"
+                alt="Kotlin"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Kotlin</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/firebase.png"
+                alt="Firebase"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Firebase</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/html.png"
+                alt="HTML"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>HTML</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/css.png" alt="CSS" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>CSS</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/ts.png"
+                alt="TypeScript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>TypeScript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/php.png" alt="PHP" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>PHP</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vite.png"
+                alt="Vite"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Vite</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/mysql.png"
+                alt="MySQL"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>MySQL</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <!-- Duplikasi untuk infinite scroll -->
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/figma.png"
+                alt="Figma"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Figma</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/kotlin.png"
+                alt="Kotlin"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Kotlin</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/firebase.png"
+                alt="Firebase"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Firebase</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/html.png"
+                alt="HTML"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>HTML</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/css.png" alt="CSS" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>CSS</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/ts.png"
+                alt="TypeScript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>TypeScript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/php.png" alt="PHP" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>PHP</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vite.png"
+                alt="Vite"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Vite</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/mysql.png"
+                alt="MySQL"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>MySQL</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <!-- Third duplication for seamless loop -->
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/figma.png"
+                alt="Figma"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Figma</h3>
+                <p>Design App</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/kotlin.png"
+                alt="Kotlin"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Kotlin</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/firebase.png"
+                alt="Firebase"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Firebase</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/html.png"
+                alt="HTML"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>HTML</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/css.png" alt="CSS" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>CSS</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/ts.png"
+                alt="TypeScript"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>TypeScript</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img src="assets/img/tools/php.png" alt="PHP" class="tool-icon" />
+              <div class="tool-card-content">
+                <h3>PHP</h3>
+                <p>Language</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/vite.png"
+                alt="Vite"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>Vite</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+            <div class="tool-card">
+              <img
+                src="assets/img/tools/mysql.png"
+                alt="MySQL"
+                class="tool-icon"
+              />
+              <div class="tool-card-content">
+                <h3>MySQL</h3>
+                <p>Framework</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+      <div class="container">
+        <div class="certificates-header">
+          <h2 class="certificates-title">Certificates</h2>
+          <p class="certificates-description">
+            Here are the certificates I have obtained throughout my learning
+            journey and personal development
+          </p>
+        </div>
+        <div class="certificates-grid" id="certificates-grid">
+          <!-- Certificate cards will be dynamically loaded here -->
+        </div>
+        <div class="pagination-container" id="pagination-container">
+          <!-- Pagination will be dynamically generated here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <!-- Marquee Projects Title -->
+        <div class="projects-marquee-section">
+          <div class="projects-marquee-container">
+            <div class="projects-marquee-text">
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+              <span>MY PROJECTS</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects-container">
+          <div class="projects-scroll" id="projects-scroll">
+            <!-- Static project cards for testing -->
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project1.jpg"
+                  alt="Project 1"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">ObesiFit Website</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project2.jpg"
+                  alt="Project 2"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project3.jpg"
+                  alt="Project 3"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">FinansialKu Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project4.jpg"
+                  alt="Project 4"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Massipa Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project5.png"
+                  alt="Project 5"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Async Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project6.jpg"
+                  alt="Project 6"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project7.jpg"
+                  alt="Project 7"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Todofy App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project8.jpg"
+                  alt="Project 8"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Mosque Management</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project9.jpg"
+                  alt="Project 9"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">SiAdam Desktop App</span>
+                        <span class="project-category"
+                          >Desktop Development</span
+                        >
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate cards for infinite scroll -->
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project1.jpg"
+                  alt="Project 1"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">ObesiFit Website</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project2.jpg"
+                  alt="Project 2"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project3.jpg"
+                  alt="Project 3"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">FinansialKu Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project4.jpg"
+                  alt="Project 4"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Massipa Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project5.png"
+                  alt="Project 5"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Async Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project6.jpg"
+                  alt="Project 6"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project7.jpg"
+                  alt="Project 7"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Todofy App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project8.jpg"
+                  alt="Project 8"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Mosque Management</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project9.jpg"
+                  alt="Project 9"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">SiAdam Desktop App</span>
+                        <span class="project-category"
+                          >Desktop Development</span
+                        >
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Third set of cards for seamless infinite scroll -->
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project1.jpg"
+                  alt="Project 1"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">ObesiFit Website</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project2.jpg"
+                  alt="Project 2"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">UI/UX Design</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project3.jpg"
+                  alt="Project 3"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">FinansialKu Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project4.jpg"
+                  alt="Project 4"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Massipa Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project5.png"
+                  alt="Project 5"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Async Website</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project6.jpg"
+                  alt="Project 6"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">NutriPal App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project7.jpg"
+                  alt="Project 7"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Todofy App</span>
+                        <span class="project-category">Mobile Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project8.jpg"
+                  alt="Project 8"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">Mosque Management</span>
+                        <span class="project-category">Web Development</span>
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-container">
+              <div class="project-card">
+                <img
+                  src="assets/img/project/Project9.jpg"
+                  alt="Project 9"
+                  class="project-image"
+                />
+                <div class="project-overlay">
+                  <div class="project-footer">
+                    <div class="footer-content">
+                      <div class="footer-text">
+                        <span class="project-name">SiAdam Desktop App</span>
+                        <span class="project-category"
+                          >Desktop Development</span
+                        >
+                      </div>
+                      <button class="btn btn-primary">
+                        <span class="desktop-text">About More</span>
+                        <i class="fas fa-eye mobile-icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat Room Section -->
+    <section id="chat-room" class="chat-room">
+      <div class="container">
+        <div class="chat-room-header">
+          <h2 class="chat-room-title">Chat Room</h2>
+          <div class="chat-room-description">
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+        </div>
+
+        <div class="chat-container">
+          <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be loaded here -->
+          </div>
+
+          <div class="chat-input-container">
+            <div class="user-info" id="user-info" style="display: none">
+              <img
+                src=""
+                alt="User Avatar"
+                class="user-avatar"
+                id="user-avatar"
+              />
+              <span class="user-name" id="user-name"></span>
+              <button class="logout-btn" id="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </div>
+
+            <div class="login-section" id="login-section">
+              <button class="google-login-btn" id="google-login-btn">
+                <svg
+                  class="google-icon"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  />
+                </svg>
+                Login with Google
+              </button>
+              <p class="login-prompt">Login to send message</p>
+            </div>
+
+            <div
+              class="message-input-section"
+              id="message-input-section"
+              style="display: none"
+            >
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="message-input"
+                  placeholder="Type your message..."
+                  maxlength="500"
+                />
+                <button class="send-btn" id="send-btn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <!-- Marquee Contact Title -->
+      <div class="contact-marquee-section">
+        <div class="contact-marquee-container">
+          <!-- Baris Pertama -->
+          <div class="contact-marquee-text">
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+            <span
+              ><span class="contact-outline">CONTACT</span>
+              <span class="contact-solid">ME</span></span
+            >
+          </div>
+
+          <!-- Baris Kedua -->
+          <div class="contact-marquee-text contact-marquee-text-2">
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+            <span
+              ><span class="contact-solid">CONTACT</span>
+              <span class="contact-outline">ME</span></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-header">
+        <p class="contact-description">
+          Let's connect and collaborate to create something extraordinary
+          together!
+        </p>
+      </div>
+
+      <div class="contact-content">
+        <!-- Left Side - Contact Links -->
+        <div class="contact-info">
+          <div class="contact-links">
+            <a
+              href="https://www.facebook.com/lipppyy"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-facebook-f"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">Facebook</span>
+                  <span class="contact-link-handle">Lippyy</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/facebookprofile.jpg"
+                alt="Facebook Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://www.instagram.com/liip.qdry"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-instagram"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">Instagram</span>
+                  <span class="contact-link-handle">@liip.qdry</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/instagramprofile.jpg"
+                alt="Instagram Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://wa.me/6289647090775"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-whatsapp"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">WhatsApp</span>
+                  <span class="contact-link-handle">Alif</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/whatsappprofile.png"
+                alt="WhatsApp Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/muhalifqadri"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-linkedin-in"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">LinkedIn</span>
+                  <span class="contact-link-handle">Muhammad Alif Qadri</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/linkedinprofile.jpeg"
+                alt="LinkedIn Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://github.com/LippyyDev"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-github"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">GitHub</span>
+                  <span class="contact-link-handle">LippyyDev</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/githubprofile.jpeg"
+                alt="GitHub Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@aliiippy_"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-tiktok"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">TikTok</span>
+                  <span class="contact-link-handle">@aliiippy_</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/tiktokprofile.jpeg"
+                alt="TikTok Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://t.me/Alip_Qadri"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fab fa-telegram-plane"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">Telegram</span>
+                  <span class="contact-link-handle">@Alip_Qadri</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/telegramprofile.jpg"
+                alt="Telegram Profile"
+                class="contact-profile-img"
+              />
+            </a>
+
+            <a
+              href="https://www.roblox.com/id/users/8768831295"
+              target="_blank"
+              class="contact-link"
+            >
+              <div class="contact-link-content-wrapper">
+                <i class="fas fa-gamepad"></i>
+                <div class="contact-link-content">
+                  <span class="contact-link-name">Roblox</span>
+                  <span class="contact-link-handle">@XKydEI</span>
+                </div>
+              </div>
+              <img
+                src="assets/img/profile/robloxprofile.webp"
+                alt="Roblox Profile"
+                class="contact-profile-img"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side - Contact Form -->
+        <div class="contact-form-container">
+          <h3 class="contact-form-title">Send Message</h3>
+          <form
+            action="https://formsubmit.co/alifqadry@gmail.com"
+            method="POST"
+            class="contact-form"
+            id="contact-form"
+          >
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="name"
+                class="form-input"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                placeholder="Tell me about your project or idea..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Contact Form Submission"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <button
+              type="submit"
+              class="btn btn-primary form-submit-btn"
+              id="submit-btn"
+            >
+              <div class="button-progress" id="button-progress"></div>
+              <div class="button-content">
+                <i class="fas fa-paper-plane"></i>
+                <span class="button-text">Send Message</span>
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal Component -->
+    <div id="certificate-modal-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo Section -->
+        <div class="footer-logo">
+          <h2>Portofolio</h2>
+          <p>
+            I am a passionate Software Engineering student with a strong
+            interest in Web Development, UI/UX Design, and Artificial
+            Intelligence. I enjoy designing and developing digital solutions
+            that combine functionality, creativity, and user-centered design.
+          </p>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="footer-nav">
+          <h3>Navigasi</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#chat-room">Chat Room</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <ul>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:alifqadry@gmail.com">alifqadry@gmail.com</a>
+            </li>
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/6289647090775" target="_blank"
+                >+62 896-4709-0775</a
+              >
+            </li>
+            <li>
+              <i class="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/liip.qdry" target="_blank"
+                >@liip.qdry</a
+              >
+            </li>
+            <li>
+              <i class="fab fa-linkedin-in"></i>
+              <a href="https://www.linkedin.com/in/muhalifqadri" target="_blank"
+                >Muhammad Alif Qadri</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-social">
+          <h3>Follow Me</h3>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.facebook.com/lipppyy"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/liip.qdry"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://github.com/LippyyDev"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/muhalifqadri"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@aliiippy_"
+              target="_blank"
+              title="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://t.me/Alip_Qadri" target="_blank" title="Telegram">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Portofolio. Made with ❤️ by Muhammad Alif Qadri</p>
+      </div>
+    </footer>
+
+    <!-- Firebase SDK v12.4.0 -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        signOut,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        query,
+        orderBy,
+        onSnapshot,
+        serverTimestamp,
+      } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAUiduYuYK5LyFrXxLO3zr4siO59t5g96s",
+        authDomain: "portofolio-a7402.firebaseapp.com",
+        projectId: "portofolio-a7402",
+        storageBucket: "portofolio-a7402.firebasestorage.app",
+        messagingSenderId: "1044287348617",
+        appId: "1:1044287348617:web:98c1cc9a1802ee885bcb58",
+        measurementId: "G-LLN8ZWR46G",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const analytics = getAnalytics(app);
+
+      // Make Firebase available globally for compatibility
+      window.firebase = {
+        auth: auth,
+        firestore: {
+          FieldValue: {
+            serverTimestamp: serverTimestamp,
+          },
+        },
+      };
+      window.firebaseApp = app;
+      window.firebaseDb = db;
+    </script>
+
+    <script src="components/navbar/navbar.js"></script>
+    <script src="components/hero-card/hero-card.js"></script>
+    <script src="components/about-card/about-card.js"></script>
+    <script src="components/primary-button/primary-button.js"></script>
+    <script src="components/certificate-modal/certificate-modal.js"></script>
+    <script src="components/certificate-pagination/certificate-pagination.js"></script>
+    <script src="components/project-card/project-card.js"></script>
+    <script src="components/chat-room/chat-room.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

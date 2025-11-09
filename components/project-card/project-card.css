@@ -1,0 +1,329 @@
+/* Project Card Component Styles */
+
+/* Project Card Container */
+.project-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Project Card with 16:9 Aspect Ratio */
+.project-card {
+  position: relative;
+  width: 500px;
+  height: 281px; /* 16:9 aspect ratio - larger */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  /* Hardware acceleration for smooth animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(138, 43, 226, 0.1) 25%,
+    rgba(255, 20, 147, 0.1) 50%,
+    rgba(0, 191, 255, 0.1) 75%,
+    rgba(50, 205, 50, 0.1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Subtle Hover Effect */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Shimmer Overlay for Mica Effect */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.1),
+    rgba(138, 43, 226, 0.1),
+    rgba(255, 20, 147, 0.1),
+    rgba(0, 191, 255, 0.1),
+    rgba(50, 205, 50, 0.1),
+    rgba(255, 165, 0, 0.1),
+    rgba(255, 0, 255, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 20, 147, 0.08),
+    rgba(0, 255, 255, 0.08),
+    rgba(138, 43, 226, 0.08),
+    rgba(0, 191, 255, 0.08),
+    rgba(50, 205, 50, 0.08)
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease-in-out infinite reverse;
+  z-index: -1;
+}
+
+/* Project Image - No filters at all */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+/* Card Overlay - Only footer, no header */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  color: #ffffff;
+  transition: transform 0.1s ease-out;
+}
+
+/* Card Footer - Full width */
+.project-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 15px;
+  transition: transform 0.1s ease-out;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-name {
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.project-category {
+  font-size: 0.7rem;
+  color: #cccccc;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* About More Button - Smaller */
+.footer-content .btn-primary {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mobile-icon {
+  display: none;
+}
+
+.desktop-text {
+  display: inline;
+}
+
+/* Desktop: hide icon, show text */
+@media (min-width: 481px) {
+  .footer-content .btn-primary .mobile-icon {
+    display: none;
+  }
+  
+  .footer-content .btn-primary .desktop-text {
+    display: inline;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    background-position: 0% 0;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    background-position: 200% 0;
+    opacity: 0.2;
+  }
+}
+
+@keyframes mica-glow {
+  0%,
+  100% {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 rgba(255, 255, 255, 0),
+      inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes iridescent-shift {
+  0% {
+    filter: hue-rotate(0deg) saturate(1.2) brightness(1.1);
+  }
+  25% {
+    filter: hue-rotate(90deg) saturate(1.5) brightness(1.3);
+  }
+  50% {
+    filter: hue-rotate(180deg) saturate(1.8) brightness(1.4);
+  }
+  75% {
+    filter: hue-rotate(270deg) saturate(1.5) brightness(1.3);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1.2) brightness(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card {
+    width: 400px;
+    height: 225px; /* Maintain 16:9 ratio */
+  }
+
+  .project-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer-content {
+    min-width: 180px;
+    padding: 6px 12px;
+  }
+  
+  .project-name {
+    font-size: 0.75rem;
+  }
+
+  .project-category {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 280px;
+    height: 158px; /* Maintain 16:9 ratio */
+  }
+
+  .footer-content {
+    min-width: 160px;
+    padding: 5px 10px;
+    gap: 5px;
+  }
+
+  .project-name {
+    font-size: 0.7rem;
+  }
+
+  .project-category {
+    font-size: 0.6rem;
+  }
+
+  .footer-content .btn-primary {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+  }
+
+  .footer-content .btn-primary .mobile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+
+  .footer-content .btn-primary .desktop-text {
+    display: none;
+  }
+}
